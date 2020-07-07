@@ -3,8 +3,6 @@ EXTRA := sub.o mul.o
 
 LIB := test.a
 
-default: $(LIB)
-
 EXTRA_OBJ :=
 
 ifneq (, $(findstring extra, $(MAKECMDGOALS)))
@@ -12,6 +10,8 @@ ifneq (, $(findstring extra, $(MAKECMDGOALS)))
 EXTRA_OBJ := $(EXTRA)
 
 endif
+
+default: $(LIB)
 
 $(LIB):: $(EXTRA_OBJ)
 	$(AR) r $(LIB) $?
@@ -31,4 +31,4 @@ fclean:
 	$(MAKE) clean
 	$(MAKE) bclean
 
-.PHONY: extra default
+.PHONY: extra default bclean fclean clean
