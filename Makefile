@@ -6,6 +6,7 @@ LIB := test.a
 default: $(LIB)
 
 EXTRA_OBJ :=
+
 ifneq (, $(findstring extra, $(MAKECMDGOALS)))
 
 EXTRA_OBJ := $(EXTRA)
