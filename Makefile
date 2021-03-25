@@ -11,6 +11,8 @@ EXTRA_OBJ := $(EXTRA)
 
 endif
 
+VPATH := src
+
 default: $(LIB)
 
 $(LIB):: $(EXTRA_OBJ)
